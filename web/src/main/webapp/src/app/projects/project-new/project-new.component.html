@@ -1,0 +1,17 @@
+<div>
+  <h2>Add project</h2>
+  <div>
+    <label>Name: </label>
+    <input #name placeholder="name">
+  </div>
+  <div>
+    <label>Description </label>
+    <input #desc placeholder="Description">
+  </div>
+  <div>
+    <label>Created By </label>
+    <input #id placeholder="Id">
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="saveProject(name.value, desc.value, id.value)">Save</button>
+</div>

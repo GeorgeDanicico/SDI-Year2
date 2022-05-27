@@ -1,0 +1,13 @@
+<div>
+  <h2>Add address</h2>
+  <div>
+    <label>City: </label>
+    <input #city placeholder="City">
+  </div>
+  <div>
+    <label>Street: </label>
+    <input #street placeholder="Street">
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="saveAddress(city.value, street.value)">Save</button>
+</div>

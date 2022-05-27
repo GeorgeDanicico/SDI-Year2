@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="project.service.CommentServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-04-18T10:19:43" hostname="MBA" time="0.013">
+  <properties/>
+  <testcase name="testAddAndGetAllComments()" classname="project.service.CommentServiceTest" time="0.008"/>
+  <testcase name="testDeleteComment()" classname="project.service.CommentServiceTest" time="0.001"/>
+  <testcase name="testCantAddSameCommentTwice()" classname="project.service.CommentServiceTest" time="0.001"/>
+  <testcase name="testFilterCommentsByDate()" classname="project.service.CommentServiceTest" time="0.001"/>
+  <testcase name="testFilterCommentsByTask()" classname="project.service.CommentServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
