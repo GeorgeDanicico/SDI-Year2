@@ -1,0 +1,75 @@
+allprojects {
+    group 'factory'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_14
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    ext {
+        springVersion = '5.0.3.RELEASE'
+        postgresqlVersion = '42.2.1'
+        dbcpVersion = '2.2.0'
+
+        slf4jVersion = '1.7.25'
+        log4jVersion = '2.10.0'
+
+        springDataVersion = '2.0.3.RELEASE'
+        hibernateVersion = '5.2.6.Final'
+        caffeineVersion = '2.6.1'
+        hikariVersion = '2.7.7'
+        jaxbapiVersion = '2.3.0'
+
+        jacksonDatabindVersion = '2.9.4'
+//        javaxServeletApiVersion = '3.1.0'
+        javaxServeletApiVersion = '4.0.1'
+
+        lombokVersion = '1.18.4'
+    }
+
+
+    dependencies {
+        implementation 'junit:junit:4.13.1'
+        implementation 'junit:junit:4.13.1'
+        implementation 'junit:junit:4.13.1'
+        implementation 'junit:junit:4.13.1'
+        implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+        implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+        implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+        implementation 'junit:junit:4.13.1'
+        implementation 'junit:junit:4.13.1'
+        implementation 'junit:junit:4.13.1'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+        implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.62'
+
+        implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
+
+        implementation group: 'org.json', name: 'json', version: '20220320'
+
+        implementation group: 'org.springframework', name: 'spring-context', version: '5.3.5'
+        implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.5'
+        implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.8.0'
+
+        implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+        implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "2.17.2"
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: "2.17.2"
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "2.17.2"
+
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

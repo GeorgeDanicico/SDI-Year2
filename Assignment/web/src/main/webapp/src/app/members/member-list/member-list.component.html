@@ -1,0 +1,47 @@
+<div *ngIf="selectedMember">
+  <h2>
+    {{selectedMember.name | uppercase}} was selected
+  </h2>
+
+  <h2>Member {{selectedMember.name}} details</h2>
+  <div>
+    <label>Name: </label> {{selectedMember.name}}
+    <input [(ngModel)]="selectedMember.name" placeholder="name">
+  </div>
+  <div>
+    <label>Date of birth: </label> {{memberBirthDate}}
+    <input [(ngModel)]="memberBirthDate" placeholder="YYYY-MM-DD">
+  </div>
+  <button (click)="save()">Save</button>
+
+  <button (click)="cancel()">Cancel</button>
+  <button (click)="deleteMember()">Delete {{selectedMember.name}}</button>
+</div>
+
+<div>
+  <h2>
+    Add Member
+  </h2>
+  <button (click)="goToAdd()">Add member</button>
+</div>
+
+<h2>Members</h2>
+<ol class="members">
+  <li *ngFor="let member of members | paginate : {
+          itemsPerPage: 4,
+          currentPage: page,
+          totalItems: count
+       };
+       let i = index
+      "
+      [class.selected]="member === selectedMember"
+      (click)="onSelect(member)">
+    {{member.name}}
+  </li>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    [responsive]="true"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+</ol>

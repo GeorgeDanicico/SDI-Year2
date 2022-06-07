@@ -1,0 +1,17 @@
+<div>
+  <h2>Add member</h2>
+  <div>
+    <label>Name: </label>
+    <input #name placeholder="name">
+  </div>
+  <div>
+    <label>Date of birth: </label>
+    <input #dob placeholder="YYYY-MM-DD">
+  </div>
+  <div>
+    <label>Address Id: </label>
+    <input #aid placeholder="YYYY-MM-DD">
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="saveMember(name.value, dob.value, aid.value)">Save</button>
+</div>

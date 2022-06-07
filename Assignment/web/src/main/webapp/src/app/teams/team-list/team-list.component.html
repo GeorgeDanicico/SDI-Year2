@@ -1,0 +1,48 @@
+<div *ngIf="selectedTeam">
+  <h2>
+    {{selectedTeam.name | uppercase}} was selected
+  </h2>
+
+  <h2>Team {{selectedTeam.name}} details</h2>
+  <div>
+    <label>Name: </label> {{selectedTeam.name}}
+    <input [(ngModel)]="selectedTeam.name" placeholder="name">
+  </div>
+
+  <button (click)="save()">Update</button>
+
+  <button (click)="deleteTeam()">Delete {{selectedTeam.name}}</button>
+  <button (click)="cancel()">cancel</button>
+
+</div>
+
+<div>
+  <h2>
+    Add Team
+  </h2>
+  <button (click)="goToAdd()">Add team</button>
+</div>
+
+<h2>Teams</h2>
+<ol class="teams">
+  <li *ngFor="let team of filterTeams(filterCondition) | paginate : {
+          itemsPerPage: 4,
+          currentPage: page,
+          totalItems: count
+       };
+       let i = index"
+      [class.selected]="team === selectedTeam"
+      (click)="onSelect(team)">
+    {{team.name}}
+  </li>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    [responsive]="true"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+</ol>
+
+<h2>Filter Teams by Name</h2>
+<input [(ngModel)]="filterCondition" placeholder="Name">
+

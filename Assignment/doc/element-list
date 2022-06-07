@@ -1,0 +1,7 @@
+mpp.project
+mpp.project.domain
+mpp.project.domain.validators
+mpp.project.exceptions
+mpp.project.mpp.project.server.repository
+mpp.project.mpp.project.server.service
+mpp.project.ui
