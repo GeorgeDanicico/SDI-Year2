@@ -1,0 +1,44 @@
+<div>
+  <label for="year">Year</label>
+  <input id="year" placeholder="year" [(ngModel)]="year">
+
+  <form class="radio">
+    <label for="before">Before</label>
+    <input id="before" type="radio" name="Before" value="before" [checked]="before" (change)="onBeforeChange()">
+    <label for="after">After</label>
+    <input id="after" type="radio" name="After" value="after" [checked]="after" (change)="onAfterChange()">
+  </form>
+
+  <div *ngIf="before">
+    <li *ngFor="let movie of movies">
+      {{movie.title}} {{movie.year}}
+      <div *ngIf="movie.actors">
+        <ol>
+          <li *ngFor="let actor of movie.actors">
+            {{actor.name}} {{actor.rating}}
+
+            <button (click)="onDelete(movie.id, actor.id)">Delete</button>
+          </li>
+        </ol>
+      </div>
+    </li>
+
+    <button (click)="onClick()">Show cast</button>
+  </div>
+
+  <div *ngIf="after">
+    <li *ngFor="let movie of movies">
+      {{movie.title}} {{movie.year}}
+      <div *ngIf="movie.actors">
+        <ol>
+          <li *ngFor="let actor of movie.actors">
+            {{actor.name}}
+          </li>
+        </ol>
+      </div>
+    </li>
+
+    <button (click)="onClick()">Show cast</button>
+  </div>
+
+</div>
