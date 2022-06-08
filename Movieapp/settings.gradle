@@ -1,4 +1,0 @@
-rootProject.name = 'movieapp'
-include 'movieapp-web'
-include 'movieapp-core'
-

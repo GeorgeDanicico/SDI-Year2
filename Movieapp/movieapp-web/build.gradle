@@ -1,7 +1,0 @@
-
-
-dependencies {
-    compile project(':movieapp-core')
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    
-}
