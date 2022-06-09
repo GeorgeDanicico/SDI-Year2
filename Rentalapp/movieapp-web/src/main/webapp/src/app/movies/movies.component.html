@@ -1,0 +1,20 @@
+
+<div>
+  <ul>
+  <li *ngFor="let movie of movies| paginate : {
+          itemsPerPage: 4,
+          currentPage: page,
+          totalItems: count
+       };
+       let i = index">
+    {{movie.title}} {{movie.description}} {{movie.genre}}
+  </li>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    [responsive]="true"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+  </ul>
+
+</div>

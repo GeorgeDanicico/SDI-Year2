@@ -1,0 +1,11 @@
+<div>
+  <p>Choose files</p>
+  <div>
+    <input type="file" (change)="selectFile1($event)">
+    <input type="file" (change)="selectFile2($event)">
+    <input type="file" (change)="selectFile3($event)">
+  </div>
+
+  <button (click)="uploadAll()">Import</button>
+  <button>Delete all</button>
+</div>

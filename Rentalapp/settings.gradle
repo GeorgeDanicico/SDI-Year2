@@ -1,0 +1,5 @@
+rootProject.name = 'movieapp'
+include 'movieapp-core'
+include 'movieapp-web'
+
+
